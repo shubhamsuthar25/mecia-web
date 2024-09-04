@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url(image2.jpeg); /* Use your uploaded image */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            width: 350px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            color: #141313;
+        }
+
+        .login-container h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            padding-left: 40px;
+            border: none;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #292323;
+            font-size: 16px;
+        }
+
+        .input-group input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .input-group .icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(14, 11, 11, 0.7);
+        }
+
+        .remember-me {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .remember-me input {
+            margin-right: 5px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 20px;
+            background: #442f2f;
+            color: #000;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #6b5555;
+        }
+
+        .register-link {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .register-link a {
+            color: #be5d5d;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Sign In</h1>
+        <form action="from.html" method="POST">
+            <div class="input-group">
+                <span class="icon">👤</span>
+                <input type="text" placeholder="Username" name="username" required>
+            </div>
+            <div class="input-group">
+                <span class="icon">🔒</span>
+                <input type="password" placeholder="Password" name="password" required>
+            </div>
+            <div class="remember-me">
+                <label><input type="checkbox" name="remember"> Remember me</label>
+                <a href="#" style="color: #a80e0e; text-decoration: underline;">Forgot password?</a>
+            </div>
+            <button type="submit" class="btn">Sign In</button>
+        </form>
+        <p class="register-link">Don't have an account? <a href="login1.html">Register</a></p>
+    </div>
+</body>
+</html>
