@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer and Consumer Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            width: 80%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        label {
+            margin-bottom: 8px;
+            font-weight: bold;
+            display: block;
+        }
+        
+        select,
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        textarea {
+            resize: vertical;
+        }
+        
+        button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        button:hover {
+            background-color: #218838;
+        }
+        
+        .form-section {
+            display: none;
+        }
+        
+        h2 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registration Form</h1>
+        <form id="registrationForm">
+            <label for="userType">I am a:</label>
+            <select id="userType" name="userType" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="farmer">Farmer</option>
+                <option value="consumer">Consumer</option>
+            </select>
+            
+            <div class="form-section" id="farmerSection">
+                <h2>Farmer Information</h2>
+                <label for="farmerName">Name:</label>
+                <input type="text" id="farmerName" name="farmerName">
+                
+                <label for="farmName">Farm Name:</label>
+                <input type="text" id="farmName" name="farmName">
+                
+                <label for="farmLocation">Farm Location:</label>
+                <input type="text" id="farmLocation" name="farmLocation">
+                
+                <label for="emailFarmer">Email:</label>
+                <input type="email" id="emailFarmer" name="emailFarmer">
+                
+                <label for="phoneFarmer">Phone:</label>
+                <input type="tel" id="phoneFarmer" name="phoneFarmer">
+                
+                <label for="product">Products Offered:</label>
+                <textarea id="product" name="product" rows="4"></textarea>
+            </div>
+
+            <div class="form-section" id="consumerSection">
+                <h2>Consumer Information</h2>
+                <label for="consumerName">Name:</label>
+                <input type="text" id="consumerName" name="consumerName">
+                
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address">
+                
+                <label for="emailConsumer">Email:</label>
+                <input type="email" id="emailConsumer" name="emailConsumer">
+                
+                <label for="phoneConsumer">Phone:</label>
+                <input type="tel" id="phoneConsumer" name="phoneConsumer">
+                
+                <label for="preferredProducts">Preferred Products:</label>
+                <textarea id="preferredProducts" name="preferredProducts" rows="4"></textarea>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('userType').addEventListener('change', function() {
+            var value = this.value;
+            var farmerSection = document.getElementById('farmerSection');
+            var consumerSection = document.getElementById('consumerSection');
+
+            if (value === 'farmer') {
+                farmerSection.style.display = 'block';
+                consumerSection.style.display = 'none';
+            } else if (value === 'consumer') {
+                consumerSection.style.display = 'block';
+                farmerSection.style.display = 'none';
+            } else {
+                farmerSection.style.display = 'none';
+                consumerSection.style.display = 'none';
+            }
+        });
+
+        
+        document.getElementById('farmerSection').style.display = 'none';
+        document.getElementById('consumerSection').style.display = 'none';
+
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            var userType = document.getElementById('userType').value;
+            
+            if (userType === 'farmer') {
+                window.location.href = 'far.html'; 
+            } else if (userType === 'consumer') {
+                window.location.href = 'cons.html';
+            }
+        });
+    </script>
+</body>
+</html>
