@@ -1,6 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
     <style>
         /* General reset */
         * {
@@ -11,150 +16,118 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #e9f5e9;
+            background-image: url(image.jpg); /* Use your uploaded image */
+            background-size: cover;
+            background-position: center;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-image: url('farm-background.jpg');
-            background-size: cover;
-            background-position: center;
         }
 
         .login-container {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            width: 320px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            width: 350px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
             text-align: center;
-            backdrop-filter: blur(5px);
+            color: #141313;
         }
 
-        h1 {
-            margin-bottom: 10px;
-            font-size: 28px;
-            color: #2f6d31;
-        }
-
-        .tagline {
+        .login-container h1 {
+            font-size: 32px;
             margin-bottom: 20px;
-            font-size: 16px;
-            color: #557a55;
-            font-style: italic;
         }
 
         .input-group {
-            margin-bottom: 15px;
-            text-align: left;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #4a744a;
-        }
-
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
-            background-color: #f5f5f5;
-        }
-
-        button.btn {
-            width: 100%;
-            padding: 10px;
-            background-color: #6bbf59;
-            color: #ffffff;
-            border: none;
-            border-radius: 4px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        button.btn:hover {
-            background-color: #569347;
-        }
-
-        .register-link {
-            margin-top: 20px;
-            font-size: 14px;
-            color: #4a744a;
-        }
-
-        .register-link a {
-            color: #6bbf59;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .register-link a:hover {
-            text-decoration: underline;
-        }
-
-        .checkbox-container {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        input[type="checkbox"] {
-            accent-color: #6bbf59; /* Modern browsers */
-            margin-right: 10px;
-        }
-
-        /* Styling for older browsers */
-        input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
-            border: 2px solid #6bbf59;
-            border-radius: 4px;
-            background-color: #fff;
-            cursor: pointer;
+            margin-bottom: 20px;
             position: relative;
         }
 
-        input[type="checkbox"]:checked::before {
-            content: '✔';
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            padding-left: 40px;
+            border: none;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #292323;
+            font-size: 16px;
+        }
+
+        .input-group input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .input-group .icon {
             position: absolute;
+            left: 10px;
             top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #6bbf59;
+            transform: translateY(-50%);
+            color: rgba(14, 11, 11, 0.7);
+        }
+
+        .remember-me {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
             font-size: 14px;
         }
+
+        .remember-me input {
+            margin-right: 5px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 20px;
+            background: #442f2f;
+            color: #000;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #6b5555;
+        }
+
+        .register-link {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .register-link a {
+            color: #be5d5d;
+            text-decoration: underline;
+            font-weight: bold;
+        }
     </style>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farm Connect - Login</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="login-container">
-        <h1>Farm Connect</h1>
-        <p class="tagline">Bridging Farmers and Consumers</p>
-        <form action="/login" method="POST">
+        <h1>Login</h1>
+        <form action="from.html" method="POST">
             <div class="input-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
+                <span class="icon">👤</span>
+                <input type="text" placeholder="Username" name="username" required>
             </div>
             <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
+                <span class="icon">🔒</span>
+                <input type="password" placeholder="Password" name="password" required>
             </div>
-            <div class="checkbox-container">
-                <input type="checkbox" value="lsRememberMe" id="rememberMe">
-                <label for="rememberMe">Remember me</label>
+            <div class="remember-me">
+                <label><input type="checkbox" name="remember"> Remember me</label>
+                <a href="#" style="color: #a80e0e; text-decoration: underline;">Forgot password?</a>
             </div>
             <button type="submit" class="btn">Login</button>
         </form>
-        <p class="register-link">New to Farm Connect? <a href="/register">Sign up here</a></p>
+        <p class="register-link">Don't have an account? <a href="login1.html">Register</a></p>
     </div>
 </body>
 </html>
